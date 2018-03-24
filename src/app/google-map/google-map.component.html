@@ -1,0 +1,10 @@
+<agm-map [latitude]="lat" [longitude]='lng' [styles]='mapStyle' (markerClick)="gm.lastOpen?.close(); gm.lastOpen = infoWindow; markerClicked(m);">
+  <agm-marker *ngFor="let marker of markers | async"
+   [latitude]="marker.lat" 
+   [longitude]="marker.lng" 
+   [iconUrl]="'assets/icons/dot.png'">
+    <agm-info-window>
+      <h1>Last time: {{marker.time | date:'short'}}</h1>
+    </agm-info-window>
+  </agm-marker>
+</agm-map>
