@@ -1,4 +1,4 @@
-<agm-map [latitude]="lat" [longitude]='lng' [styles]='mapStyle' (markerClick)="gm.lastOpen?.close(); gm.lastOpen = infoWindow; markerClicked(m);">
+<agm-map [latitude]="lat" [longitude]='lng' [styles]='mapStyle'>
   <agm-marker *ngFor="let marker of markers | async"
    [latitude]="marker.lat" 
    [longitude]="marker.lng" 
